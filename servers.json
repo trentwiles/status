@@ -1,0 +1,5 @@
+[
+    {"endpoint": "135.148.149.204", "name": "IAD"},
+    {"endpoint": "161.35.104.241", "name": "EWR"},
+    {"endpoint": "144.172.73.16", "name": "AMS"}
+]
