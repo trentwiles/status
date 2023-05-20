@@ -1,5 +1,5 @@
 [
-    {"endpoint": "135.148.149.204", "name": "IAD"},
-    {"endpoint": "161.35.104.241", "name": "EWR"},
-    {"endpoint": "144.172.73.16", "name": "AMS"}
+    {"endpoint": "135.148.149.204", "IATA": "IAD", "desc": "Ashburn, Virginia VPS"},
+    {"endpoint": "161.35.104.241", "IATA": "EWR", "desc": "Newark, New Jersey - Cache/DNS/Tor Exit Node"},
+    {"endpoint": "144.172.73.16", "IATA": "AMS", "desc": "Amsterdam, Netherlands - Tor Exit Node"}
 ]
