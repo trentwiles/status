@@ -51,7 +51,7 @@ def hello():
 
     print(json.dumps(today))
     allTime  = (vnstat["interfaces"][0]["traffic"]["total"]["rx"] + vnstat["interfaces"][0]["traffic"]["total"]["rx"])
-    return Response(json.dumps({"current": {"inbound": str(currentIn) + measure, "outbound": str(currentOut) + measure, "average": str(round(average, 2)) + bw}, "daily": {"inbound": str(round(DcurrentIn, 2)) + Dmeasure, "outbound": str(round(DcurrentOut, 2)) + Dmeasure, "average": str(round(Daverage, 2)) + Dbw}, "total": str(round(allTime/ 1024 ** 4, 2)) + "TB"}), content_type="application/json")
+    return Response(json.dumps({"current": {"inbound": str(round(currentIn, 2)) + measure, "outbound": str(round(currentOut, 2)) + measure, "average": str(round(average, 2)) + bw}, "daily": {"inbound": str(round(DcurrentIn, 2)) + Dmeasure, "outbound": str(round(DcurrentOut, 2)) + Dmeasure, "average": str(round(Daverage, 2)) + Dbw}, "total": str(round(allTime/ 1024 ** 4, 2)) + "TB"}), content_type="application/json")
 
 if __name__ == '__main__':
     app.run(port=8585, host='0.0.0.0')
