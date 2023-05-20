@@ -1,5 +1,6 @@
 [
-    {"endpoint": "135.148.149.204", "IATA": "IAD", "desc": "Ashburn, Virginia VPS"},
+    {"endpoint": "135.148.149.204", "IATA": "IAD", "desc": "Ashburn, Virginia - General VPS/Privacy Services"},
     {"endpoint": "161.35.104.241", "IATA": "EWR", "desc": "Newark, New Jersey - Cache/DNS/Tor Exit Node"},
-    {"endpoint": "144.172.73.16", "IATA": "AMS", "desc": "Amsterdam, Netherlands - Tor Exit Node"}
+    {"endpoint": "144.172.73.16", "IATA": "AMS", "desc": "Amsterdam, Netherlands - Tor Exit Node"},
+    {"endpoint": "73.119.32.87", "IATA": "HVN", "desc": "New Haven, Connecticut - Storage/Privacy Services"}
 ]

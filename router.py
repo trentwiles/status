@@ -1,6 +1,7 @@
 from flask import Flask, Response
 import json
 import subprocess
+import datetime
 
 app = Flask(__name__)
 
@@ -37,7 +38,12 @@ def hello():
 
     Dmeasure = "MB"
     Dbw = "mbps"
-    Daverage = ((DcurrentIn + DcurrentOut) / (24 * 3660) ) * 8.3
+    current_time = datetime.datetime.utcnow()
+    start_time = datetime.datetime(current_time.year, current_time.month, current_time.day, 0, 0, 0)
+    time_difference = current_time - start_time
+    seconds_since_midnight = time_difference.total_seconds()
+
+    Daverage = ((DcurrentIn + DcurrentOut) / (seconds_since_midnight) ) * 8.3
     if DcurrentOut > 1000 or DcurrentIn > 1000:
         DcurrentOut /= 1024
         DcurrentIn /= 1024
@@ -48,4 +54,4 @@ def hello():
     return Response(json.dumps({"current": {"inbound": str(currentIn) + measure, "outbound": str(currentOut) + measure, "average": str(round(average, 2)) + bw}, "daily": {"inbound": str(round(DcurrentIn, 2)) + Dmeasure, "outbound": str(round(DcurrentOut, 2)) + Dmeasure, "average": str(round(Daverage, 2)) + Dbw}, "total": str(round(allTime/ 1024 ** 4, 2)) + "TB"}), content_type="application/json")
 
 if __name__ == '__main__':
-    app.run(port=6565)
+    app.run(port=8585, host='0.0.0.0')
